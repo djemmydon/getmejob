@@ -14,7 +14,7 @@ const TextFont = ({ children, style }) => {
   return <Text style={[styles.text, style]}>{children}</Text>;
 };
 
-export const TextFontMedium = ({ children, style }) => {
+export const TextFontMedium = ({ children, style, secureText }) => {
   const [fontsLoaded] = useFonts({
     PoppinMedium: require("./Poppins-Medium.ttf"),
   });
@@ -38,7 +38,13 @@ export const TextFontLight = ({ children, style }) => {
   return <Text style={[styles.textLight, style]}>{children}</Text>;
 };
 
-export const FormInputFont = ({  style, placeholder, }) => {
+export const FormInputFont = ({
+  style,
+  placeholder,
+  secureText,
+  name,
+  onChangeText,
+}) => {
   const [fontsLoaded] = useFonts({
     PoppinForm: require("./Poppins-Light.ttf"),
   });
@@ -47,7 +53,15 @@ export const FormInputFont = ({  style, placeholder, }) => {
     return null;
   }
 
-  return <TextInput placeholder={placeholder} style={[styles.formInput, style,]} />;
+  return (
+    <TextInput
+      secureTextEntry={secureText}
+      placeholder={placeholder}
+      style={[styles.formInput, style]}
+      id={name}
+      onChangeText={onChangeText}
+    />
+  );
 };
 
 const styles = StyleSheet.create({
@@ -65,13 +79,18 @@ const styles = StyleSheet.create({
     width: "100%",
     marginVertical: 10,
     paddingVertical: 10,
-    paddingHorizontal: 4,
+    paddingHorizontal: 10,
+    paddingHorizontal: 6,
     shadowColor: SHADOWS.small,
+    // borderWidth: 1,
+    backgroundColor: "#0000",
+    borderColor: "gray",
+    width: "100%",
     borderWidth: 1,
     borderRadius: 10,
     backgroundColor: "#fff",
     fontFamily: "PoppinForm",
-
+    fontSize: 14,
   },
 });
 

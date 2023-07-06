@@ -4,7 +4,11 @@ import Register from "../../components/Auth/Register";
 
 function RegisterScreen() {
   return (
-    <View style={{marginTop:60}}>
+    <View style={{
+      paddingTop: 60,
+      backgroundColor: "#fff",
+      height:"100%"
+    }}>
       <ScrollView>
         <Register />
       </ScrollView>

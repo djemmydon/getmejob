@@ -4,7 +4,7 @@ import JobDetails from "../components/Job/details/JobDetails";
 
 function JobDetailsScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:"#000000"}}>
       <ScrollView>
         <JobDetails />
       </ScrollView>

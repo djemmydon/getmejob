@@ -17,11 +17,13 @@ export const styles = StyleSheet.create({
   },
 
   searcInput: {
-    backgroundColor: "#0101",
+    borderColor: "#585CE5",
+    borderWidth:1,
     height: 40,
     paddingLeft: 10,
     borderRadius: 20,
     fontSize: 16,
+    color: "#585CE5"
   },
 
   searchIcon: {
@@ -48,18 +50,19 @@ export const styles = StyleSheet.create({
 
   popularJob: {
     width: 120,
-    height: 120,
-    backgroundColor: "#6d9773",
+    height: "100%",
+    backgroundColor: "#ffff",
     marginHorizontal: 5,
     paddingHorizontal: 5,
+    paddingVertical: 5,
     borderRadius: 10,
   },
 
   PopularCardImage: {
-    width: 30,
-    height: 30,
+    width: "100%",
+    height: 100,
     borderRadius: 10,
-    marginVertical: 10,
+    marginVertical: 5,
   },
 
   serchBody: {
@@ -71,17 +74,18 @@ export const styles = StyleSheet.create({
   searchedJobCard: {
     width: 300,
     padding: 20,
-    backgroundColor: "#0c3b2e",
+    backgroundColor: "#5324FD",
     borderRadius: 10,
     marginVertical: 5,
     position: "relative",
   },
 
   searchedCardImage: {
-    width: 40,
-    height: 40,
+    width: 50,
+    height: 50,
     marginBottom: 16,
     borderRadius: 10,
+    objectFit: "cover",
   },
 
   headerText: {
@@ -100,7 +104,7 @@ export const styles = StyleSheet.create({
   // Job Descriptions
 
   descriptionHead: {
-    backgroundColor: "#0c3b2e",
+    backgroundColor: "#5324FD",
     height: 270,
     borderBottomEndRadius: 30,
     borderBottomLeftRadius: 30,
@@ -148,18 +152,17 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     fontSize: 15,
     borderBottomColor: "#6d9773",
-    borderBottomWidth:1
+    borderBottomWidth: 1,
   },
 
   NotActiveText: {
     paddingHorizontal: 10,
-
   },
 
   applyButton: {
     width: 300,
     height: 40,
-    backgroundColor: "#0c3b2e",
+    backgroundColor: "#5324FD",
     borderRadius: 10,
     marginVertical: 20,
     justifyContent: "center",

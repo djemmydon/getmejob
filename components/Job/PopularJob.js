@@ -11,10 +11,11 @@ function PopularJob() {
         style={styles.PopularCardImage}
       />
 
-      <TextFontMedium  style={{color: "#fff", fontSize: 10}}>Senior React Developer Job</TextFontMedium>
-      <TextFontMedium style={{marginTop: 5, color: "#ffba00", fontSize: 10}}>NGN100,000</TextFontMedium>
+      <TextFontMedium  style={{color: "#B7BFCC", fontSize: 10}}>Senior React Developer Job</TextFontMedium>
+      <TextFontMedium style={{marginTop: 5, color: "#585CE5", fontSize: 10}}>NGN100,000</TextFontMedium>
     </TouchableOpacity>
   );
 }
 
 export default PopularJob;
+   

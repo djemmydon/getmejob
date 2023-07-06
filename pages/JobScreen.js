@@ -4,7 +4,7 @@ import JobComponent from "../components/Job/JobComponent";
 
 function JobScreen() {
   return (
-    <ScrollView style={{marginVertical: 40}}>
+    <ScrollView style={{paddingVertical: 40, backgroundColor:"#FAFAFF"}}>
     <SafeAreaView>
       
         <JobComponent />

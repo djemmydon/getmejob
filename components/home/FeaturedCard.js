@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { styles } from "./style";
 import TextFont, {
   TextFontLight,
@@ -9,46 +9,26 @@ import TextFont, {
 function FeaturedCard() {
   return (
     <View style={styles.cardBody}>
-      <View style={styles.cardHeader}>
-        <Image
-          source={require("../../assets/download-logo.png")}
-          style={styles.cardImage}
-        />
-        <View>
-          <TextFont style={{ fontSize: 18, color: "#fff" }}>
-            Product Designer
+      <View style={styles.heroContent}>
+        <View style={styles.heroContentBody}>
+          <TextFont style={{ color: "#fff", fontSize: 20 }}>
+            Connect Your Bussiness With People
           </TextFont>
-          <TextFontLight style={{ fontSize: 12, color: "#ffbaoo" }}>
-            Google
+          <TextFontLight style={{ color: "#fff", fontSize: 12 }}>
+            Connect Your Bussiness With Right Minded People
           </TextFontLight>
+          <Pressable style={styles.heroContentButton}>
+            <TextFontMedium style={{ color: "#585CE5", fontSize: 12 }}>
+              Start Now
+            </TextFontMedium>
+          </Pressable>
         </View>
-      </View>
-
-      <View style={styles.jobRequire}>
-        <View style={styles.require}>
-          <TextFontLight style={{ fontSize: 12, color: "#fff" }}>
-            Administration
-          </TextFontLight>
+        <View>
+          <Image
+            source={require("../../assets/header.png")}
+            style={styles.heroContentBodyImage}
+          />
         </View>
-        <View style={styles.require}>
-          <TextFontLight style={{ fontSize: 12, color: "#fff" }}>
-            Junior
-          </TextFontLight>
-        </View>
-        <View style={styles.require}>
-          <TextFontLight style={{ fontSize: 12, color: "#fff" }}>
-            Full-Tine
-          </TextFontLight>
-        </View>
-      </View>
-
-      <View style={styles.price}>
-        <TextFontMedium style={{ fontSize: 12, color: "#6d9773" }}>
-          $100 / Year
-        </TextFontMedium>
-        <TextFontMedium style={{ fontSize: 12, color: "#6d9773" }}>
-          Agodi Ibadan
-        </TextFontMedium>
       </View>
     </View>
   );

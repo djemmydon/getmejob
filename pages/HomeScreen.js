@@ -6,7 +6,7 @@ import { useFonts } from "expo-font";
 function HomeScreen() {
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:"#FAFAFF"}}>
       <ScrollView>
         <Home font="Popin" />
       </ScrollView>

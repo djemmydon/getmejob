@@ -4,7 +4,14 @@ import Login from "../../components/Auth/Login";
 
 function LoginScreen() {
   return (
-    <View style={{ marginTop: 50, justifyContent: "center" }}>
+    <View
+      style={{
+        paddingTop: 50,
+        justifyContent: "center",
+        backgroundColor: "#fff",
+        height:"100%"
+      }}
+    >
       <ScrollView contentContainerStyle={{ justifyContent: "center" }}>
         <Login />
       </ScrollView>

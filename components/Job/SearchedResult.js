@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./style";
 import TextFont, {
   TextFontLight,
@@ -13,7 +13,7 @@ function SearchedResult({ item }) {
   // console.log(item.employer_logo);
 
   return (
-    <TouchableOpacity
+    <Pressable
       style={styles.searchedJobCard}
       onPress={() => navigation.navigate("JobDetails", {
         item: item
@@ -63,7 +63,7 @@ function SearchedResult({ item }) {
         color="black"
         style={styles.fav}
       />
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

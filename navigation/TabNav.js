@@ -5,6 +5,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import ProfileScreen from "../pages/ProfileScreen";
+import ChatScreen from "../pages/ChatScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,11 +15,22 @@ function TabNav() {
       screenOptions={{
         tabBarShowLabel: true,
         headerShown: false,
-        tabBarStyle: { backgroundColor: "#6d9773" },
+        tabBarStyle: { backgroundColor: "#000" },
         tabBarInactiveBackgroundColor: "",
-        tabBarActiveTintColor: "#0c3b2e",
-        tabBarInactiveTintColor: "#fff",
+        tabBarActiveTintColor: "#5324FD",
+        tabBarInactiveTintColor: "#0107",
         tabBarHideOnKeyboard: true,
+        tabBarShowLabel: false,
+       
+
+        tabBarStyle: {
+          // position: "absolute",
+          bottom: 5,
+          marginHorizontal: 10,
+          height: 60,
+          borderRadius: 20,
+        },
+
       }}
     >
       <Tab.Screen
@@ -34,7 +46,7 @@ function TabNav() {
       />
       <Tab.Screen
         name="Message"
-        component={HomeScreen}
+        component={ChatScreen}
         options={{
           headerShown: false,
 

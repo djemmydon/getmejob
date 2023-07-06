@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     justifyContent: "center",
     marginHorizontal: 10,
-    height:"100%",
   },
 
   bodyAuthForm: {
@@ -55,6 +54,8 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
+
 });
 
 // #ccfbff

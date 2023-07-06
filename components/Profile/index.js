@@ -3,8 +3,10 @@ import { View } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import { styles } from "./styles";
 import TextFont, { TextFontLight } from "../../assets/fonts/useThisFont";
-import { Feather } from '@expo/vector-icons';
+import { Feather } from "@expo/vector-icons";
+import { useFetch } from "../../useFetch";
 function Profile() {
+  const { users } = useFetch();
   return (
     <View style={styles.body}>
       <View
@@ -18,25 +20,24 @@ function Profile() {
 
       <View style={styles.settingIn}>
         <TextFont>Edit Profile</TextFont>
-
         <View style={[styles.settingItem, styles.shadowProp]}>
           <View>
-            <TextFont>Phone Number</TextFont>
-            <TextFont style={{ color: "#0106" }}>09065192164</TextFont>
+            <TextFont>Name</TextFont>
+            <TextFont style={{ color: "#0106", fontSize:10 }}>{users?.user?.name}</TextFont>
           </View>
           <FontAwesome name="pencil" size={24} color="#0106" />
         </View>
         <View style={[styles.settingItem, styles.shadowProp]}>
           <View>
             <TextFont>Phone Number</TextFont>
-            <TextFont style={{ color: "#0106" }}>09065192164</TextFont>
+            <TextFont style={{ color: "#0106", fontSize:10 }}>{users?.user?.phone}</TextFont>
           </View>
           <FontAwesome name="pencil" size={24} color="#0106" />
         </View>
         <View style={[styles.settingItem, styles.shadowProp]}>
           <View>
-            <TextFont>Phone Number</TextFont>
-            <TextFont style={{ color: "#0106" }}>09065192164</TextFont>
+            <TextFont>Email</TextFont>
+            <TextFont style={{ color: "#0106", fontSize:10 }}>{users?.user?.email}</TextFont>
           </View>
           <FontAwesome name="pencil" size={24} color="#0106" />
         </View>

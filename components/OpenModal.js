@@ -4,7 +4,9 @@ import Modal from "react-native-modal";
 import { TextFontMedium } from "../assets/fonts/useThisFont";
 import { COLORS } from "../utils";
 import { Ionicons } from "@expo/vector-icons";
-function OpenModal({ isOpen, text, setIsOpen }) {
+import { useNavigation } from "@react-navigation/native";
+function OpenModal({ isOpen, text, setIsOpen, pageRoute }) {
+  const navigation = useNavigation();
   return (
     <Modal
       onRequestClose={() => {
@@ -34,7 +36,14 @@ function OpenModal({ isOpen, text, setIsOpen }) {
             {text}
           </TextFontMedium>
 
-          <Pressable style={styles.button} onPress={() => setIsOpen(!isOpen)}>
+          <Pressable
+            style={styles.button}
+            onPress={() => {
+              navigation.navigate(pageRoute);
+
+              setIsOpen(!isOpen);
+            }}
+          >
             <TextFontMedium
               style={{
                 fontSize: 20,

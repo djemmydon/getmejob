@@ -165,15 +165,15 @@ function JobDetails() {
         {active === 1 && (
           <View>
             <TextFontMedium
-                  style={{
-                    textDecorationColor: "#0c3b2e",
-                    marginHorizontal: 10,
-                    marginVertical: 5,
-                    fontSize: 13,
-                  }}
-                >
-                {item.job_description}
-                </TextFontMedium>
+              style={{
+                textDecorationColor: "#5324FD",
+                marginHorizontal: 10,
+                marginVertical: 5,
+                fontSize: 13,
+              }}
+            >
+              {item.job_description}
+            </TextFontMedium>
           </View>
         )}
         {active === 2 && (
@@ -188,7 +188,7 @@ function JobDetails() {
               renderItem={({ item }) => (
                 <TextFontMedium
                   style={{
-                    textDecorationColor: "#0c3b2e",
+                    textDecorationColor: "#5324FD",
                     marginHorizontal: 10,
                     marginVertical: 5,
                     fontSize: 13,
@@ -208,7 +208,7 @@ function JobDetails() {
               renderItem={({ item }) => (
                 <TextFontMedium
                   style={{
-                    textDecorationColor: "#0c3b2e",
+                    textDecorationColor: "#5324FD",
                     marginHorizontal: 10,
                     marginVertical: 5,
                     fontSize: 13,

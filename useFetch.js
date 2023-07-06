@@ -1,19 +1,26 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export const useFetch = (endpoint, query) => {
+export const useFetch = (endpoint) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [users, setUsers] = useState({});
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem("user");
+      const jsonValue = value != null ? JSON.parse(value) : null;
+      setUsers(jsonValue);
+    } catch (e) {
+      // error reading value
+    }
+  };
 
   const options = {
     method: "GET",
-    url: `https://jsearch.p.rapidapi.com/${endpoint}`,
-    params: { ...query },
-    headers: {
-      "X-RapidAPI-Key": "d138dedd9emsh4efcffe41409e1fp19f4cfjsn75de3da71ade",
-      "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-    },
+    url: `http://192.168.43.242:3001/api/v1/${endpoint}`,
   };
 
   const fetchData = async () => {
@@ -21,7 +28,7 @@ export const useFetch = (endpoint, query) => {
 
     try {
       const response = await axios.request(options);
-      setData(response.data.data);
+      setData(response.data);
       setIsLoading(false);
     } catch (err) {
       setError(err);
@@ -32,5 +39,13 @@ export const useFetch = (endpoint, query) => {
     fetchData();
   }, []);
 
-  return { data, error, isLoading };
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const refetch = () => {
+    fetchData();
+  };
+
+  return { data, error, isLoading, refetch, users };
 };
